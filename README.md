@@ -1,1 +1,1 @@
-# NYT-App
+# Trivia-Game
