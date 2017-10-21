@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>NYTSearch</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 <body>
 
@@ -14,18 +17,18 @@
 
 <script type="text/javascript">
 	
-var url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=new+york+times&page=2&sort=oldest&api-key=####";
 
 
+var APIkey = "00528d89e0954e6f9b6e5e992d064f42"; 
 
-$("button").on("click", function {
+$("button").on("click", function() {
 
 	var userInput = $("#input").val();
 
-	var Queryurl = url + userInput;
+	var url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + userInput + "&page=2&sort=oldest&api-key=" + APIkey;
 
 	$.ajax({
-	  url: Queryurl,
+	  url: url,
 	  method: 'GET',
 	}).done(function(result) {
 	  console.log(result);
