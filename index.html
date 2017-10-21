@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html>
-		<!--Linking Bootstrap and CSS sheets-->
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 <head>
-	<title>Assignment</title>
+	<title>NYTSearch</title>
 </head>
-<body>	
-	<div class="row">
-		<div class = "col-md-2"></div>
-		<div class = "col-md-8 display">
-			<h1>Hello</h1>
-		</div>
-		<div class = "col-md-2"></div>
-	</div>
-	 	<!-- Added link to the jQuery Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<!--Linking JS Game -->
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
+<body>
+
+<input type="text" name="search" id="input">
+<button>Search</button>
+<form>
+</form>
+
+
+
+<script type="text/javascript">
+	
+var url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=new+york+times&page=2&sort=oldest&api-key=####";
+
+
+
+$("button").on("click", function {
+
+	var userInput = $("#input").val();
+
+	var Queryurl = url + userInput;
+
+	$.ajax({
+	  url: Queryurl,
+	  method: 'GET',
+	}).done(function(result) {
+	  console.log(result);
+	}).fail(function(err) {
+	  throw err;
+	});
+
+
+
+});
+</script>
 </body>
 </html>
