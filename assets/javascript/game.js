@@ -28,14 +28,18 @@ $(document).ready(function () {
 		});
 
 		searchfunc function() {
-			var whatever = $("<div>").append(result.reponse.docs[i].snippet)
-		    var whatever1 = $("<div>").append(result.reponse.docs[i].headline.main) 
+			console.log(result.reponse.docs[i].snippet);
+			console.log(result.reponse.docs[i].headline.main);
+			$("#snippet").append(result.reponse.docs[i].snippet)
+		    $("#headline").append(result.reponse.docs[i].headline.main) 
 		}
 
-		
+
 		for (var i = 0; i < limit; i++) {
 			
 			$("#results").append(searchfunc())
+			searchfunc();
+
 		}
 
 });
