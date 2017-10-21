@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -591,4 +592,46 @@
     <script src="contactform/contactform.js"></script>
     
 </body>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NYTSearch</title>
+</head>
+<body>
+
+<input type="text" name="search" id="input">
+<button>Search</button>
+<form>
+</form>
+
+
+
+<script type="text/javascript">
+	
+var url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=new+york+times&page=2&sort=oldest&api-key=####";
+
+
+
+$("button").on("click", function {
+
+	var userInput = $("#input").val();
+
+	var Queryurl = url + userInput;
+
+	$.ajax({
+	  url: Queryurl,
+	  method: 'GET',
+	}).done(function(result) {
+	  console.log(result);
+	}).fail(function(err) {
+	  throw err;
+	});
+
+
+
+});
+</script>
+</body>
+>>>>>>> 09414b470fef6e55973c666269c832a474310a62
 </html>
